@@ -7,6 +7,9 @@
 const canvas = document.querySelector('#canvas');
 const gameOverMessage = document.querySelector('.game-over-message');
 const scoreView = document.querySelector('.score__count');
+const startGamePanel = document.querySelector('.start-game');
+const playButton = document.querySelector('.start-game__button');
+
 
 const ctx = canvas.getContext('2d');
 
@@ -25,12 +28,13 @@ const moveRight  = (x, y) => [x + 1, y];
 
 const directionsQueue = [];
 let lastDirection;
+let gameLoopId;
 
-// Set initial game state
-setup();
-
-// Main game loop
-const gameLoopId = setInterval(game, 100);
+playButton.addEventListener('click', () => {
+    startGamePanel.style.display = 'none';
+    setup();
+    gameLoopId = setInterval(game, 100);
+});
 
 function game() {    
     const tailEnd = snake[0];

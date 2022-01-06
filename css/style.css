@@ -13,9 +13,6 @@ body {
 
 #canvas {
     position: relative;
-    /* border: 2px solid #ecf0f1; */
-    /* border: 2px solid #e74c3c; */
-    /* box-shadow: 0 0 40px rgba(231, 76, 60, 0.6); */
     border: 2px solid #1e8ef9;
 }
 
@@ -62,4 +59,28 @@ body {
 
 .game-over-message__subtitle {
     margin-top: 10px;
+}
+
+.start-game {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.start-game__button {
+    padding: 20px 50px;
+    background: #1e8ef9;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    color: #ecf0f1;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.start-game__text {
+    margin-top: 20px;
 }
