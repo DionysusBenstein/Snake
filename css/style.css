@@ -68,6 +68,7 @@ body {
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .start-game__button {
@@ -82,5 +83,7 @@ body {
 }
 
 .start-game__text {
-    margin-top: 20px;
+    margin-top: 15px;
+    line-height: 28px;
+    text-align: center;
 }

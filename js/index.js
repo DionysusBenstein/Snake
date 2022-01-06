@@ -1,7 +1,6 @@
 /* TODO:
     - [ ] save best result to local storage;
-    - [ ] make smooth animation when game is over and smooth snake moving;
-    - [ ] game menu.
+    - [ ] make smooth animation when game is over and smooth snake moving.
 */
 
 const canvas = document.querySelector('#canvas');
@@ -9,7 +8,6 @@ const gameOverMessage = document.querySelector('.game-over-message');
 const scoreView = document.querySelector('.score__count');
 const startGamePanel = document.querySelector('.start-game');
 const playButton = document.querySelector('.start-game__button');
-
 
 const ctx = canvas.getContext('2d');
 
@@ -30,11 +28,13 @@ const directionsQueue = [];
 let lastDirection;
 let gameLoopId;
 
-playButton.addEventListener('click', () => {
+playButton.addEventListener('click', starGame);
+
+function starGame() {
     startGamePanel.style.display = 'none';
     setup();
     gameLoopId = setInterval(game, 100);
-});
+}
 
 function game() {    
     const tailEnd = snake[0];
@@ -128,6 +128,7 @@ function gameOver() {
     gameOverMessage.style.display = 'flex';
     canvas.style.boxShadow = '0 0 40px 0 rgba(231, 76, 60, 0.6)';
     canvas.style.border = '2px solid #e74c3c';
+    playButton.removeEventListener('click', starGame);
 }
 
 function updateScore() {  
